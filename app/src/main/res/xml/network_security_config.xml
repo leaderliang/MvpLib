@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<network-security-config>
+    <base-config cleartextTrafficPermitted="true" />
+    <domain-config>
+        <domain includeSubdomains="true">image.so.com</domain>
+        <trust-anchors>
+            <certificates src="user"/>
+        </trust-anchors>
+    </domain-config>
+</network-security-config>
+
+<!--<network-security-config>
+<domain-config>
+    <domain includeSubdomains="true">x-sys.i-counting.cn</domain>
+    <trust-anchors>
+        <certificates src="@raw/charles_ssl_proxying_certificate" />
+    </trust-anchors>
+</domain-config>
+</network-security-config>-->

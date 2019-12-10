@@ -1,0 +1,83 @@
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion 28
+
+
+    defaultConfig {
+        minSdkVersion 16
+        targetSdkVersion 29
+        versionCode 1
+        versionName "1.0"
+        /*法数超过65536解决方法*/
+        multiDexEnabled true
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles 'consumer-rules.pro'
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+//    testImplementation 'junit:junit:4.12'
+//    androidTestImplementation 'androidx.test.ext:junit:1.1.0'
+//    androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.1'
+
+    implementation googleDependencies["androidx-appcompat"]
+    implementation viewDependencies["constraintlayout"]
+    implementation googleDependencies["material"]
+
+    /*okHttp3*/
+    api 'com.squareup.okhttp3:okhttp:3.12.0'
+    api 'com.squareup.okhttp3:logging-interceptor:3.9.0'
+
+    /*RxJava*/
+    api "io.reactivex.rxjava2:rxjava:2.2.8"
+    api 'io.reactivex.rxjava2:rxandroid:2.1.1'
+
+    /*butterKnife*/
+    api viewDependencies["butterknife"]
+    annotationProcessor compilerDependencies["butterknife-compiler"]
+
+    /*AutoDispose解决RxJava内存泄漏,版本大于 0.8.0会报错，需要兼容 androidx*/
+    api 'com.uber.autodispose:autodispose:0.8.0'
+    api 'com.uber.autodispose:autodispose-android:0.8.0'
+    api 'com.uber.autodispose:autodispose-android-archcomponents:0.8.0'
+
+
+    /*retrofit2*/
+    api 'com.squareup.retrofit2:retrofit:2.6.0'
+    /*Gson converter*/
+    api 'com.squareup.retrofit2:converter-gson:2.6.0'
+    /*RxJava2 Adapter*/
+    api 'com.squareup.retrofit2:adapter-rxjava2:2.6.0'
+    /*converter-scalars 支持将字符串和基元及其包装类型转换为文本/纯文本体*/
+    api 'com.squareup.retrofit2:converter-scalars:2.6.0'
+    //Material-dialogs
+    api 'com.afollestad.material-dialogs:core:0.9.6.0'
+    /*fastJson*/
+    api 'com.alibaba:fastjson:1.2.56'
+
+
+
+
+
+
+
+
+
+
+    implementation project(path: ':imageloader')
+}

@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">core</string>
+
+    <!-- ProgressDialog-->
+    <string name="progress_dialog_title">Progress Dialog</string>
+    <string name="progress_please_wait">Please wait…</string>
+
+    <string name="check_network_is_ok">请检查网络设置</string>
+</resources>

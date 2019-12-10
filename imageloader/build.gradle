@@ -1,0 +1,43 @@
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion rootProject.ext.android.compileSdkVersion
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    defaultConfig {
+        minSdkVersion rootProject.ext.android.minSdkVersion
+        targetSdkVersion rootProject.ext.android.targetSdkVersion
+        versionCode rootProject.ext.android.versionCode
+        versionName rootProject.ext.android.versionName
+        testInstrumentationRunner testDependencies["AndroidJUnitRunner"]
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    /* Glide */
+    implementation imageDependencies["glide"]
+    annotationProcessor compilerDependencies["glide-compiler"]
+    /* Glide 图片变换*/
+    implementation imageDependencies["glide-transformations"]
+    /* If you want to use the GPU Filters 图像滤镜框架GPUImage  https://github.com/cats-oss/android-gpuimage*/
+    implementation imageDependencies["gpuimage"]
+
+    implementation annotationsDependencies["support-annotations"]
+    annotationProcessor compilerDependencies["support-annotations-compiler"]
+
+    implementation eventDependencies["rxjava"]
+    implementation eventDependencies["rxandroid"]
+    implementation okhttpDependencies["okhttp"]
+    implementation okhttpDependencies["logging-interceptor"]
+
+}

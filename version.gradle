@@ -1,0 +1,86 @@
+ext {
+
+    android = [
+            compileSdkVersion: 28,
+            buildToolsVersion: "28.0.3",
+            minSdkVersion    : 16,
+            targetSdkVersion : 28,
+            versionCode      : 1,
+            versionName      : "1.0",
+    ]
+
+    imageDependencies = [
+            "glide"                : "com.github.bumptech.glide:glide:4.9.0",
+            // Glide 图片变换
+            "glide-transformations": "jp.wasabeef:glide-transformations:4.0.1",
+            // If you want to use the GPU Filters 图像滤镜框架GPUImage  https://github.com/cats-oss/android-gpuimage
+            "gpuimage"             : "jp.co.cyberagent.android:gpuimage:2.0.3",
+    ]
+
+    compilerDependencies = [
+            "glide-compiler"      : "com.github.bumptech.glide:compiler:4.9.0",
+            "butterknife-compiler": "com.jakewharton:butterknife-compiler:10.0.0",
+            "support-annotations-compiler": "com.android.support:support-annotations:28.0.0",
+    ]
+
+    okhttpDependencies = [
+            "okhttp"             : "com.squareup.okhttp3:okhttp:4.0.0",
+            "logging-interceptor": "com.squareup.okhttp3:logging-interceptor:4.0.0",
+    ]
+
+    eventDependencies = [
+            "rxjava"   : "io.reactivex.rxjava2:rxjava:2.2.10",
+            "rxandroid": "io.reactivex.rxjava2:rxandroid:2.1.1",
+            "eventbus" : 'org.greenrobot:eventbus:3.1.1'
+    ]
+
+    googleDependencies = [
+            "appcompat-v7"      : 'androidx.appcompat:appcompat:1.0.2',
+            "constraint-layout" : 'androidx.constraintlayout:constraintlayout:1.1.3',
+            "design"            : 'com.google.android.material:material:1.0.0',
+            "material-dialog"   : "com.afollestad.material-dialogs:core:0.9.6.0",
+            "androidx-appcompat": "androidx.appcompat:appcompat:1.0.2",
+            "material"          : "com.google.android.material:material:1.0.0",
+            "multidex"          : 'androidx.multidex:multidex:2.0.0',
+
+    ]
+
+    viewDependencies = [
+            "butterknife": "com.jakewharton:butterknife:10.0.0",
+            "constraintlayout": "androidx.constraintlayout:constraintlayout:1.1.3",
+    ]
+
+    retrofitDependencies = [
+            "retrofit"         : "com.squareup.retrofit2:retrofit:2.6.0",
+            // Gson converter
+            "converter-gson"   : "com.squareup.retrofit2:converter-gson:2.6.0",
+            "adapter-rxjava2"  : "com.squareup.retrofit2:adapter-rxjava2:2.6.0",
+            // 支持将字符串和基元及其包装类型转换为文本/纯文本体
+            "converter-scalars": "com.squareup.retrofit2:converter-scalars:2.6.0",
+    ]
+
+    disposeDependencies = [
+            // AutoDispose解决RxJava内存泄漏,版本大于 0.8.0会报错，需要兼容 androidx
+            "autodispose"                       : "com.uber.autodispose:autodispose:0.8.0",
+            "autodispose-android"               : "com.uber.autodispose:autodispose-android:0.8.0",
+            "autodispose-android-archcomponents": "com.uber.autodispose:autodispose-android-archcomponents:0.8.0",
+    ]
+
+    annotationsDependencies = [
+            // jetbrains 注解
+            "jetbrains-annotations-java5": "org.jetbrains:annotations-java5:15.0",
+            "support-annotations": "com.android.support:support-annotations:28.0.0",
+    ]
+
+    dataDependencies = [
+            "fastjson": "com.alibaba:fastjson:1.2.56",
+    ]
+
+    testDependencies = [
+            "junit"             : "junit:junit:4.12",
+            "androidJunit"      : "androidx.test.ext:junit:1.1.0",
+            "runner"            : 'androidx.test:runner:1.1.0',
+            "espresso-core"     : 'androidx.test.espresso:espresso-core:3.1.1',
+            "AndroidJUnitRunner": "androidx.test.runner.AndroidJUnitRunner",
+    ]
+}
