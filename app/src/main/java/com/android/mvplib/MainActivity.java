@@ -147,11 +147,15 @@ public class MainActivity extends BaseActivity<ImgListContract.View, ImgListCont
             mImgListData = bean;
             if(mIsRefresh && CollectionUtils.isEmpty(mImgListData)){
                 mImgListData.clear();
+                mMyImgListAdapter.setNewData(mImgListData);
+            }else{
+//                mImgList.addAll(mImgListData);
+                mMyImgListAdapter.addData(mImgListData);
+                mMyImgListAdapter.loadMoreComplete();
+//                mMyImgListAdapter.notifyDataSetChanged();
             }
 //            ToastUtils.show(mImgListData.size());
 
-            mImgList.addAll(mImgListData);
-            mMyImgListAdapter.notifyDataSetChanged();
         }
     }
 
