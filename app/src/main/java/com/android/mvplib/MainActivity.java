@@ -1,26 +1,22 @@
 package com.android.mvplib;
 
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.view.View;
 
-import com.android.core.constant.AppConstant;
+import androidx.annotation.Nullable;
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
+
 import com.android.core.mvp.activity.BaseActivity;
 import com.android.core.utils.CollectionUtils;
-import com.android.core.view.toast.ToastUtils;
 import com.android.mvplib.adapter.MyImgListAdapter;
 import com.android.mvplib.bean.ImgListBean;
 import com.android.mvplib.contract.ImgListContract;
 import com.android.mvplib.presenter.ImgListPresenter;
 import com.chad.library.adapter.base.BaseQuickAdapter;
-
-import androidx.annotation.Nullable;
-import androidx.recyclerview.widget.GridLayoutManager;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
-
-import android.view.View;
-import android.view.Menu;
-import android.view.MenuItem;
 
 import java.util.ArrayList;
 import java.util.List;
